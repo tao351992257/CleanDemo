@@ -1,7 +1,8 @@
 package com.example.presentation.di.components
 
 import com.example.presentation.di.modules.WeatherModules
-import com.example.presentation.ui.MainActivity
+import com.example.presentation.ui.activity.MainActivity
+import com.example.presentation.ui.base.BaseActivity
 import dagger.Component
 
 /**
@@ -10,5 +11,5 @@ import dagger.Component
  */
 @Component(modules = [WeatherModules::class])
 interface WeatherComponent {
-    fun inject(activity: MainActivity)
+    fun inject(activity: BaseActivity)
 }

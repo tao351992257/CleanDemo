@@ -1,13 +1,11 @@
 package com.example.presentation.di.modules
 
-import com.example.data.repository.repository.WeatherRepositoryimpl
-import com.example.data.repository.repositoryimpl.WeatherRepository
-import com.example.domain.usercase.WeatherUserCaseimpl
-import com.example.domain.usercaseimpl.WeatherUserCase
+import com.example.data.repository.repository.WeatherRepository
+import com.example.data.repository.repositoryimpl.IWeatherRepository
+import com.example.domain.usercase.WeatherUseCases
+import com.example.domain.usercaseimpl.IWeatherUserCase
+import com.example.presentation.presenter.IWeatherPresenter
 import com.example.presentation.presenter.WeatherPresenter
-import com.example.presentation.presenter.WeatherPresenterimpl
-import com.example.presentation.ui.MainActivity
-import com.example.presentation.ui.WeatherView
 import dagger.Module
 import dagger.Provides
 
@@ -19,17 +17,17 @@ import dagger.Provides
 class WeatherModules {
 
     @Provides
-    fun provideWeatherPresenter(weatherPresenterimpl: WeatherPresenterimpl): WeatherPresenter {
-        return weatherPresenterimpl
+    fun provideWeatherPresenter(weatherPresenter: WeatherPresenter): IWeatherPresenter {
+        return weatherPresenter
     }
 
     @Provides
-    fun provideWeatherRepository(weatherRepositoryimpl: WeatherRepositoryimpl): WeatherRepository {
-        return weatherRepositoryimpl
+    fun provideWeatherRepository(weatherRepository: WeatherRepository): IWeatherRepository {
+        return weatherRepository
     }
 
     @Provides
-    fun provideWeatherUserCase(weatherUserCaseimpl: WeatherUserCaseimpl): WeatherUserCase {
+    fun provideWeatherUserCase(weatherUserCaseimpl: WeatherUseCases): IWeatherUserCase {
         return weatherUserCaseimpl
     }
 

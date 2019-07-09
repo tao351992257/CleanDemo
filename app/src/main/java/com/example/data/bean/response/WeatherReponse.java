@@ -6,7 +6,7 @@ import java.util.List;
  * Created by : JinTao Li
  * Created time : 2019/4/16
  */
-public class Weather {
+public class WeatherReponse {
 
     /**
      * status : 1
